@@ -1,0 +1,179 @@
+//css reset meyerweb
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+:root{
+    font-family: Microsoft JhengHei;
+}
+// css start
+
+.clock{
+    height: 80vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.electronicClock{
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+    line-height: 3rem;
+    background: #b2bec3;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 1px 1px 10px black inset;
+    margin-bottom: 20px;
+    .timeText{
+        display: flex;
+        justify-content: space-around;
+        span:nth-child(odd) {         // odd even
+            width: 30%;
+            text-align: center;
+        }
+    }
+}
+
+.circle{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    border-radius: 50% ;
+    background: #f1f1f1;
+    border: 15px solid #c6c6c6;
+    box-shadow: 0 0 10px   inset;
+    .center{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: #c6c6c6;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        margin-top: -20px;  /*在設定絕對定位時，元素在top50%，left50%時是以元素的左上角為基準點移動，所以必須減去該元素的一半負值做補回*/
+        margin-left: -20px;
+    }
+    .hand{
+        width: 10px;
+        margin-left: -5px; 
+        position: absolute;
+        background: black;
+        left: 50%;
+        box-shadow: #232425 0 0 2px;
+    }
+    .hand-hour{
+        border-radius: .5em;
+        transform-origin:50% 100px;
+        height: 150px;
+        top: 150px;  
+    }
+    .hand-minute{
+        transform-origin:50% 150px;
+        height: 200px;
+        top: 100px;
+        border-radius: .5em;
+    }
+    .hand-second{
+        width: 5px;
+        margin-left: -2.5px;
+        border-radius: 50% 50% 0 0;
+        transform-origin:50% 180px;
+        height: 210px;
+        top: 70px; 
+        background: red;
+        &::after{
+            content: '';
+            background: inherit;
+            position: inherit;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            bottom: 20px;
+            left: -0.5em;
+        }
+        &::before{
+            content: '';
+            background: inherit; 
+            position: inherit;
+            width: 15px;
+            height: 40px;
+            border-radius: 20% 20% 50% 50% / 50% 50% 50% 50%;
+            left: -5px;
+            bottom: -40px;
+        }
+    }
+    li{
+        position:absolute; 
+        width: 2px;
+        height: 6px;  
+        background: #929394;  
+        transform-origin: 50% 250px;  /*這裡的250px是整個圓的一半，亦即是以這個圓的中心為基準點，每個point向右+6度點出一個圓型*/
+        left:250px;
+        top:0;  
+        margin-left: -1px;
+    }
+}
+ @for $i from 1 through 60 {
+    li:nth-child(#{$i}){ 
+        transform: rotate(#{$i*6}deg);
+    }
+    @if ($i%5==0){
+        li:nth-child(#{$i}){ 
+            width: 4px;
+            height: 12px;   
+            margin-left: -2px;
+            &::after{
+                content: '#{$i / 5}';
+                display: block;
+                transform: rotate(-#{$i*6}deg);
+                margin-left: -15px;
+                margin-top: 25px;
+                font-size: 30px;
+                font-weight: 900;
+                color: black;
+            }
+        }
+    }
+  }
+
+//(A)程式學習到的事情： 1.了解transform-origin中心點的定位方式 2.更熟悉:after，:before的使用方法 3.使用scss搭配迴圈刻畫出時鐘刻度
