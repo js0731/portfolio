@@ -1,0 +1,162 @@
+@charset "UTF-8";
+/* css reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* css start */
+body {
+  height: 80vh;
+  margin: 0px;
+  font-family: '微軟正黑體';
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #1c1b1a;
+}
+
+h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.wrap {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.wrap button {
+  color: #cccc;
+  width: 70px;
+  height: 70px;
+  border: 1px solid black;
+  margin: 10px;
+  text-align: center;
+  line-height: 70px;
+  background: #333;
+  font-size: 50px;
+  border-radius: 20%;
+}
+
+.wrap button:hover {
+  cursor: pointer;
+}
+
+.wrap button:active {
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5) inset;
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5) inset;
+}
+
+.wrap footer {
+  width: 100%;
+}
+
+.wrap footer .reset {
+  width: 70%;
+  height: 60px;
+  line-height: 60px;
+  display: block;
+  background: #444;
+  color: #fff;
+  border-radius: 5px;
+  margin: 0 auto;
+  font-size: 24px;
+  margin-top: 12px;
+}
+
+.wrap footer .reset:active {
+  background-color: transparent;
+}
+
+.wrap .O {
+  color: green;
+}
+
+.wrap .X {
+  color: red;
+}
+
+/*}
+    button{
+        width: 70%;
+        display: block;
+        background: #444;
+        color:#fff;
+        padding: 15px;
+        border-radius:5px;
+        margin: 0 auto;
+        &:active{
+background-color: transparent;
+        }
+    }
+    */
+/*# sourceMappingURL=index.css.map */
