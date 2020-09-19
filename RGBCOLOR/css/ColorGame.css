@@ -95,6 +95,11 @@ header p {
   margin-bottom: 3vh;
 }
 
+.bar .reset:hover {
+  background: #0984e3;
+  color: white;
+}
+
 .bar button {
   background: none;
   border: none;
