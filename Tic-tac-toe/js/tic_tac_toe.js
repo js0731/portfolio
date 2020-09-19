@@ -5,19 +5,22 @@ function press(index) {
     if (btn.classList.contains('disable')) {
         alert('點過了!!!')
         return
-    } else if (turn % 2 === 0) {
+    } else if (turn % 2 === 0 && turn < 10) {
         btn.textContent = 'O';
         btn.classList.add('disable', 'O');
         if (checkWin('O')) {
             alert('Winner O');
+            turn = 10
         }
-    } else if (turn % 2 === 1) {
+    } else if (turn % 2 === 1 && turn < 10) {
         btn.textContent = 'X';
         btn.classList.add('disable', 'X');
         if (checkWin('X')) {
             alert('Winner X');
+            turn = 10
         }
     }
+
     turn += 1;
     if (turn === 9) {
         alert('平手!!!')

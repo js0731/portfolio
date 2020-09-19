@@ -300,7 +300,7 @@ hr {
 }
 
 .todo .remove {
-  background: url(bin.png) no-repeat center;
+  background: url(../img/bin.png) no-repeat center;
   margin: 0 12px;
   padding: 0 12px;
 }
